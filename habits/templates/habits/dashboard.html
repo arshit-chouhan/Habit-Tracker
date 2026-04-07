@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'habits/dashboard.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="dashboard-container">
+
+    <h2 class="dashboard-title">Today's Habits</h2>
+
+    {% for log in logs %}
+    <div class="habit-card">
+
+        <div class="habit-info">
+            {{ log.habit.name }}
+
+            {% if log.completed %}
+                <span class="completed">✔ Completed</span>
+            {% else %}
+                <span class="not-completed">⬜ Not Done</span>
+            {% endif %}
+        </div>
+
+        <div class="actions">
+            <a href="/toggle/{{ log.id }}/" class="btn btn-toggle">Toggle</a>
+            <a href="/habit/{{ log.habit.id }}/" class="btn btn-view">View</a>
+            <a href="/edit/{{ log.habit.id }}/" class="btn btn-edit">Edit</a>
+            <a href="/delete/{{ log.habit.id }}/" class="btn btn-delete">Delete</a>
+        </div>
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}

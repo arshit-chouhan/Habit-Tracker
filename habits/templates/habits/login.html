@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'habits/login.css' %}">
+</head>
+<body>
+
+<div class="container">
+    <div class="login-box">
+        <h2>Welcome Back 👋</h2>
+        <p class="subtitle">Login to your account</p>
+
+        <form method="post">
+            {% csrf_token %}
+
+            <div class="form-fields">
+                {{ form.as_p }}
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+
+<!--<h2>Login</h2>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Login</button>
+</form>-->
+

@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+/* Container */
+.dashboard-container {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+/* Title */
+.dashboard-title {
+    text-align: center;
+    color: white;
+}
+
+/* Card */
+.habit-card {
+    background: white;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Info */
+.habit-info {
+    font-size: 18px;
+}
+
+/* Status */
+.completed {
+    color: green;
+}
+
+.not-completed {
+    color: gray;
+}
+
+/* Buttons */
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    padding: 6px 10px;
+    border-radius: 6px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-toggle { background: green; }
+.btn-view { background: blue; }
+.btn-edit { background: orange; }
+.btn-delete { background: red; }

@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<h2>{{ habit.name }}</h2>
+
+<p>Current Streak: 🔥 {{ habit.current_streak }}</p>
+
+<h3>Last 30 Days</h3>
+
+<div>
+{% for log in logs %}
+{% if log.completed %}
+✔
+{% else %}
+✖
+{% endif %}
+{% endfor %}
+</div>
+
+{% endblock %}

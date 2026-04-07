@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'habits/detail.css' %}">
+{% endblock %}
+{% block content %}
+
+<div class="detail-container">
+
+    <div class="detail-card">
+        <h2>{{ habit.name }}</h2>
+
+        <p class="streak">
+            🔥 Current Streak: <span>{{ habit.current_streak }}</span>
+        </p>
+
+        <h3>Last 30 Days</h3>
+
+        <div class="days">
+            {% for log in logs %}
+                {% if log.completed %}
+                    <span class="done">✔</span>
+                {% else %}
+                    <span class="not-done">✖</span>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,57 @@
+/* Center container */
+.detail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Card UI */
+.detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+/* Title */
+.detail-card h2 {
+    margin-bottom: 10px;
+}
+
+/* Streak */
+.streak {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.streak span {
+    font-weight: bold;
+}
+
+/* Days container */
+.days {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+/* Completed day */
+.done {
+    background: #4CAF50;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+}
+
+/* Not completed day */
+.not-done {
+    background: #f44336;
+    color: white;
+    padding: 8px 10px;
+    border-radius: 6px;
+}

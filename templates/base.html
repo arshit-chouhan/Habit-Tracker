@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habit Tracker</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+
+    {% block css %}
+    {% endblock %}
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Habit Tracker</h1>
+
+    {% if user.is_authenticated %}
+    <div class="user-info">
+
+        Hello {{ user.username }}
+    </div>
+
+    <div class="navbar">
+        <a href="/">Dashboard</a>
+        <a href="/add/">Add Habit</a>
+       <form action="/logout/" method="post" style="display:inline;">
+    {% csrf_token %}
+    <button type="submit" style="background:none; border:none; color:white; cursor:pointer;">
+        Logout
+    </button>
+</form>
+    </div>
+
+    <hr>
+    {% endif %}
+</div>
+
+<div class="main-content">
+    {% block content %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
